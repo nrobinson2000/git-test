@@ -2,9 +2,13 @@
 
 GITBRANCH="$(git rev-parse --abbrev-ref HEAD)"
 echo "$GITBRANCH"
+GITCOMMIT="$(git rev-parse --short --verify $GITBRANCH)"
+echo "$GITCOMMIT"
 
 rm -f "src/metadata.h"
 
 echo "#ifndef METADATA_H
+#define METADATA_H
 #define __GITBRANCH__ \"$GITBRANCH\"
+#define __GITCOMMIT__ \"$GITCOMMIT\"
 #endif" > "src/metadata.h"
