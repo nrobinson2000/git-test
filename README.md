@@ -6,7 +6,7 @@ A Particle project named git-test
 
 This is a proof of concept created in response to: <https://community.particle.io/t/accessing-git-meta-data-in-using-c-preprocessor-directives-and-or-makefile/47415?u=nrobinson2000>
 
-The `generate` script creates a `metadata.h` header file in `src/` that contains defines repository information so that it can be included into the `git-test.ino` application code.
+The `generate` script creates a `metadata.h` header file in `src/` that contains repository information so that it can be included into the `git-test.ino` application code.
 
 To test this project you can do the following:
 
