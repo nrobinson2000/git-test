@@ -3,3 +3,8 @@
 GITBRANCH="$(git rev-parse --abbrev-ref HEAD)"
 echo "$GITBRANCH"
 
+rm -f "src/metadata.h"
+
+echo "#ifndef METADATA_H
+#define __GITBRANCH__ \"$GITBRANCH\"
+#endif" > "src/metadata.h"

@@ -1,18 +1,20 @@
 /*
  * Project git-test
  * Description:
- * Author:
+ * Author: nrobinson2000
  * Date:
  */
 
-// setup() runs once, when the device is first turned on.
+ #include "metadata.h"
+
 void setup() {
-  // Put initialization like pinMode and begin functions here.
 
 }
 
-// loop() runs over and over again, as quickly as it can execute.
 void loop() {
-  // The core of your code will likely live here.
-
+        static uint32_t msDelay = 0;
+        if (millis() - msDelay >= 10000) {
+                Particle.publish("git-branch-name", __GITBRANCH__, 60, PRIVATE);
+                msDelay = millis();
+        }
 }
